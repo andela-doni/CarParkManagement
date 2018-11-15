@@ -2,7 +2,11 @@ const Vehicle = require('../../models').Vehicle;
 const Customer = require('../../models').Customer;
 
 module.exports = {
+
   create(req, res) {
+      if(!req.body.vehicle_number || req.body.vehicle_number ===''){
+      return res.status(400).send({ message: 'Vehicle Licence required' });
+    }
     return Vehicle
     .findOne({
       where: {
@@ -29,8 +33,22 @@ module.exports = {
      .catch(error => res.status(400).send(error));
   }, 
 
+
   update(req, res) {
-  return Vehicle
+    return Vehicle
+    .findOne({
+    where:{
+      vehicle_number: req.body.vehicle_number
+    }
+  })
+  .then(vehicle => {
+    if(vehicle){
+      return res.status(409).send({
+      message: 'Vehicle Licence is already in our system '
+        })
+    }
+    else {
+      return Vehicle
     .find({
         where: {
           id: req.params.vehicleId,
@@ -49,13 +67,20 @@ module.exports = {
         .catch(error => res.status(400).send(error));
     })
     .catch(error => res.status(400).send(error));
+    }
+  })
+  .catch(error => res.status(400).send(error));
 },
+
+
 list(req, res) {
   return Vehicle
     .all()
     .then(vehicle => res.status(200).send(vehicle))
     .catch(error => res.status(400).send(error));
 },
+
+
 retrieve(req, res) {
   return Vehicle
     .findById(req.params.vehicleId, {
@@ -73,6 +98,7 @@ retrieve(req, res) {
     })
     .catch(error => res.status(400).send(error));
 },
+
 
 destroy(req, res) {
   return Vehicle

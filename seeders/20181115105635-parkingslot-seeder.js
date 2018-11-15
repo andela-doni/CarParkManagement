@@ -36,6 +36,21 @@ module.exports = {
         parkingLotID: 1,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+        {
+        parkingLotID: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+        {
+        parkingLotID: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+        {
+        parkingLotID: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }]);
   },
 

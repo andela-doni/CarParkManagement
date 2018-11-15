@@ -22,6 +22,13 @@ app.put('/api/customers/:customerId/vehicle/:vehicleId', vehiclesController.upda
 app.delete('/api/customers/:customerId/vehicle/:vehicleId', vehiclesController.destroy);
 
 //parking
-app.post('/api/parking/:parkingSlotId/:vehicleId', parkingsController.create);
+app.post('/api/parking', parkingsController.create);
+app.delete('/api/parking', parkingsController.destroy);
+app.get('/api/parking', parkingsController.list);
+app.get('/api/parking/:parkingId', parkingsController.retrieve);
+
+
+
+
 
 };
