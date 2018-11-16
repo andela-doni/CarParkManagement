@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'parkingLotId',
       onDelete: 'CASCADE',
     });
-    ParkingSLot.hasMany(models.Parking, {
+    ParkingSlot.hasMany(models.Parking, {
       foreignKey: 'parkingSlotId',
     });
     

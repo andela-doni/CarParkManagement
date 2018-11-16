@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      parking_id: {
-        type: Sequelize.INTEGER
-      },
       parkingSlotId: {
         allowNull: false,
         type: Sequelize.INTEGER,
