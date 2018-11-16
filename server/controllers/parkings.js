@@ -71,6 +71,7 @@ retrieve(req, res) {
   if(!req.body.vehicleId || req.body.vehicleId===''){
       return res.status(400).send({ message: 'Vehicle Id required' });
   }
+
   return Parking
     .find({
         where: {
