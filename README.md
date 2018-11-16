@@ -32,8 +32,11 @@ Car Park Management requires [Node.js](https://nodejs.org/) to run.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
+$ git clone git@github.com:andela-doni/CarParkManagement.git
 $ cd CarParkManagement
 $ npm install 
+$ createdb car-park-system
+$ sequelize db:migrate
 $ sequelize db:seed:all
 $ npm run start:dev
 ```
