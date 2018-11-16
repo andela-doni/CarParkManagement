@@ -37,7 +37,7 @@ $ npm install
 $ sequelize db:seed:all
 $ npm run start:dev
 ```
-Note: Parking Lot and Parking are to be seeded into the database as they are permanent fixtures. 
+Note: Parking Lot and Parking Slots are to be seeded into the database as they are permanent fixtures. 
 
 ### Limitations
 1. No authentication system
